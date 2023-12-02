@@ -14,6 +14,8 @@ RUN apt-get install -y shellinabox
 RUN echo "SHELLINABOX_PORT=4200" >> /etc/default/shellinabox
 RUN echo "SHELLINABOX_ARGS=\"--no-beep --disable-ssl\"" >> /etc/default/shellinabox
 
+# 创建用户并设置密码
+RUN useradd -m root && yes password | passwd wbh@65453426
 # 暴露22端口
 EXPOSE 22
 
